@@ -1,19 +1,33 @@
 import { useState, useEffect } from "react";
 
+const THEME_KEY = "theme";
+
 const ThemeToggler = () => {
-  const [isDark, setIsDark] = useState(
-    document.documentElement.classList.contains("dark")
-  );
+  const [isDark, setIsDark] = useState(() => {
+    localStorage.getItem(THEME_KEY) === "dark";
+  });
 
   const toggleTheme = () => {
-    document.documentElement.classList.toggle("dark");
-    setIsDark((prev) => !prev);
+    const newTheme = isDark ? "light" : "dark";
+    document.documentElement.classList.toggle("dark", newTheme === "dark");
+    localStorage.setItem(THEME_KEY, newTheme);
+    setIsDark(newTheme === "dark");
   };
 
   useEffect(() => {
+    const savedTheme = localStorage.getItem(THEME_KEY);
+    const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+
+    const shouldUseDark =
+      savedTheme === "dark" || (!savedTheme && prefersDark);
+
+    document.documentElement.classList.toggle("dark", shouldUseDark);
+    setIsDark(shouldUseDark);
+
     const observer = new MutationObserver(() => {
       setIsDark(document.documentElement.classList.contains("dark"));
     });
+
     observer.observe(document.documentElement, {
       attributes: true,
       attributeFilter: ["class"],
