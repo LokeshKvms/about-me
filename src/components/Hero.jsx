@@ -8,84 +8,80 @@ import { SplitText } from "gsap/all";
 
 const Hero = () => {
   useGSAP(() => {
-  const tl = gsap.timeline();
+    const tl = gsap.timeline();
 
-  // Split only by words
-  const splitTitle = new SplitText(".title", { type: "words" });
+    const splitTitle = new SplitText(".title", { type: "words" });
 
-  // Set each word's initial position and opacity
-  gsap.set(splitTitle.words, {
-    opacity: 0,
-    y: 30,
-  });
-
-  // Animate words into view
-  tl.to(splitTitle.words, {
-    opacity: 1,
-    y: 0,
-    duration: 0.8,
-    ease: "power3.out",
-    stagger: 0.1,
-  });
-
-  // Animate rest of the elements as before
-  tl.from(
-    ".subtitle",
-    {
+    gsap.set(splitTitle.words, {
       opacity: 0,
-      y: 20,
-      duration: 0.6,
-      ease: "power2.out",
-    },
-    "-=0.4"
-  );
+      y: 30,
+    });
 
-  tl.from(
-    ".hero-desc",
-    {
-      opacity: 0,
-      y: 20,
-      duration: 0.6,
-      ease: "power2.out",
-    },
-    "-=0.4"
-  );
-
-  tl.from(
-    ".hero-icon",
-    {
-      opacity: 0,
-      scale: 0.8,
-      duration: 0.5,
-      ease: "back.out(1.7)",
+    tl.to(splitTitle.words, {
+      opacity: 1,
+      y: 0,
+      duration: 0.8,
+      ease: "back.out(3.5)",
       stagger: 0.1,
-    },
-    "-=0.3"
-  );
+    });
 
-  tl.from(
-    ".resume-btn",
-    {
-      opacity: 0,
-      scale: 0.9,
-      duration: 0.5,
-      ease: "back.out(1.7)",
-    },
-    "-=0.3"
-  );
+    tl.from(
+      ".subtitle",
+      {
+        opacity: 0,
+        y: 20,
+        duration: 0.6,
+        ease: "back.out(3.5)",
+      },
+      "-=0.4"
+    );
 
-  tl.from(
-    ".profile-pic",
-    {
-      opacity: 0,
-      y: 40,
-      scale: 0.95,
-      duration: 1,
-      ease: "power3.out",
-    },
-    0
-  );
-}, []);
+    tl.from(
+      ".hero-desc",
+      {
+        opacity: 0,
+        y: 20,
+        duration: 0.6,
+        ease: "back.out(3.5)",
+      },
+      "-=0.4"
+    );
+
+    tl.from(
+      ".hero-icon",
+      {
+        opacity: 0,
+        scale: 0.8,
+        duration: 0.5,
+        ease: "back.out(3.5)",
+        stagger: 0.1,
+      },
+      "-=0.3"
+    );
+
+    tl.from(
+      ".resume-btn",
+      {
+        opacity: 0,
+        scale: 0.9,
+        duration: 0.5,
+        ease: "back.out(3.5)",
+      },
+      "-=0.3"
+    );
+
+    tl.from(
+      ".profile-pic",
+      {
+        opacity: 0,
+        y: 40,
+        scale: 0.95,
+        duration: 1,
+        ease: "back.out(3.5)",
+      },
+      0
+    );
+  }, []);
 
   return (
     <section className="bg-white-heat dark:bg-black-sheep text-typo dark:text-white-heat transition-colors duration-500">
@@ -93,7 +89,6 @@ const Hero = () => {
 
       <div className="max-w-7xl mx-auto px-4 py-20">
         <div className="grid md:grid-cols-2 gap-12 items-center">
-          {/* Right side - Profile */}
           <div className="order-1 md:order-2 flex justify-center items-center">
             <div className="relative w-48 md:w-82 aspect-square profile-pic">
               <div className="absolute -top-2 -right-2 translate-x-1/3 -translate-y-1/3 sm:translate-x-1/2 -sm:-translate-y-1/2 z-10">
@@ -110,7 +105,6 @@ const Hero = () => {
             </div>
           </div>
 
-          {/* Left side - Text */}
           <div className="order-2 md:order-1 flex flex-col items-center md:items-center justify-center text-center md:text-center space-y-6">
             <h1 className="title text-4xl md:text-5xl font-bold tracking-tighter leading-tight">
               Venkata Mani Sai Lokesh Kollapudi
