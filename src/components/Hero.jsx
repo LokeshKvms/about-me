@@ -12,7 +12,7 @@ const Hero = () => {
         <div className="grid md:grid-cols-2 gap-12 items-center">
           <div className="order-1 md:order-2 flex justify-center items-center fade-in-up-scale delay-profile">
             <div className="relative w-3/5 max-w-xs md:max-w-sm aspect-square flex justify-center items-center">
-              <div className="absolute top-0 right-0 translate-x-1/3 -translate-y-1/3 sm:translate-x-1/2 -sm:-translate-y-1/2 z-10 transition-all duration-300">
+              <div className="absolute -top-2 -right-2 translate-x-1/3 -translate-y-1/3 sm:translate-x-1/2 -sm:-translate-y-1/2 z-10 transition-all duration-300">
                 <ThemeToggler />
               </div>
 
