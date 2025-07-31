@@ -11,6 +11,7 @@ const AboutSection = () => {
 
   useGSAP(() => {
     const ctx = gsap.context(() => {
+
       const tl = gsap.timeline({
         scrollTrigger: {
           trigger: container.current,
@@ -25,7 +26,7 @@ const AboutSection = () => {
         scale: 0.9,
         duration: 0.6,
         ease: "back.out(1.7)",
-        stagger: 0.10,
+        stagger: 0.1,
       });
 
       tl.from(
@@ -54,24 +55,30 @@ const AboutSection = () => {
         "-=0.5"
       );
 
-      const skillSections = gsap.utils.toArray(".skill-section");
-      skillSections.forEach((section) => {
+      function animateSkillBadges(section) {
+        const isMobile = window.innerWidth < 768;
+
         gsap.from(section.querySelectorAll(".skill-badge"), {
           scrollTrigger: {
             trigger: section,
-            start: "top 90%",
+            start: "top bottom-=50",
             toggleActions: "play none none none",
           },
           opacity: 0,
-          y: 30,
-          scale: 0.9,
-          duration: 0.9,
-          ease: "back.out(1.7)",
+          y: 40,
+          scale: isMobile ? 1 : 0.95,
+          duration: 0.7,
+          ease: "back.out(2)", // more dramatic bounce
           stagger: {
-            amount: 0.6,
+            amount: isMobile ? 0.25 : 0.6,
             from: "start",
           },
         });
+      }
+
+      const skillSections = gsap.utils.toArray(".skill-section");
+      skillSections.forEach((section) => {
+        animateSkillBadges(section);
       });
     }, container);
 
@@ -79,11 +86,29 @@ const AboutSection = () => {
   }, []);
 
   const workSkills = [
-    "Html", "CSS", "JavaScript", "jQuery", "PHP", "Laravel",
-    "MySql", "Bootstrap", "React", "Tailwind CSS", "Vite", "Git", "Github",
+    "Html",
+    "CSS",
+    "JavaScript",
+    "jQuery",
+    "PHP",
+    "Laravel",
+    "MySql",
+    "Bootstrap",
+    "React",
+    "Tailwind CSS",
+    "Vite",
+    "Git",
+    "Github",
   ];
   const funSkills = [
-    "GSAP", "Express.js", "Figma", "Node.js", "Power BI", "Java", "Python", "MongoDB",
+    "GSAP",
+    "Express.js",
+    "Figma",
+    "Node.js",
+    "Power BI",
+    "Java",
+    "Python",
+    "MongoDB",
   ];
 
   return (
@@ -94,10 +119,12 @@ const AboutSection = () => {
       <div className="w-full md:w-[70%] space-y-6">
         <SectionHeading level="h2" className="about-heading">
           About
-          <span className="ml-[3px] text-slate-500 dark:text-slate-300 font-extrabold">.</span>
+          <span className="ml-[3px] text-slate-500 dark:text-slate-300 font-extrabold">
+            .
+          </span>
         </SectionHeading>
 
-        {[ 
+        {[
           `I’m a recent Computer Science graduate from VVIT (June 2025) and currently wrapping up a six-month web development internship at Vivenns Global Pvt. Ltd., Hyderabad.`,
           `During this internship, I’ve worked on real-world projects where I implemented security features like CAPTCHA and middleware access control, contributed to UI enhancements, and built responsive landing pages in React.`,
           `Beyond work, I explore modern web technologies and animation libraries to push the boundaries of user experience.`,
@@ -116,13 +143,15 @@ const AboutSection = () => {
         <div className="skill-section">
           <SectionHeading level="h3" className="about-heading">
             At work
-            <span className="ml-[3px] text-slate-500 dark:text-slate-300 text-xl font-extrabold">.</span>
+            <span className="ml-[3px] text-slate-500 dark:text-slate-300 text-xl font-extrabold">
+              .
+            </span>
           </SectionHeading>
           <div className="flex flex-wrap gap-2">
             {workSkills.map((skill) => (
               <span
                 key={skill}
-                className="skill-badge bg-slate-500 dark:bg-slate-300 px-3 py-1 rounded-full text-sm border-2 shadow-xl border-typo font-bold dark:border-white-heat text-white-heat dark:text-black-sheep"
+                className="skill-badge will-change-transform bg-slate-500 dark:bg-slate-300 px-3 py-1 rounded-full text-sm border-2 shadow-xl border-typo font-bold dark:border-white-heat text-white-heat dark:text-black-sheep"
               >
                 {skill}
               </span>
@@ -133,13 +162,15 @@ const AboutSection = () => {
         <div className="skill-section">
           <SectionHeading level="h3" className="about-heading">
             For fun
-            <span className="ml-[3px] text-slate-500 dark:text-slate-300 text-xl font-extrabold">.</span>
+            <span className="ml-[3px] text-slate-500 dark:text-slate-300 text-xl font-extrabold">
+              .
+            </span>
           </SectionHeading>
           <div className="flex flex-wrap gap-2">
             {funSkills.map((skill) => (
               <span
                 key={skill}
-                className="skill-badge bg-slate-500 dark:bg-slate-300 px-3 py-1 rounded-full text-sm border-2 shadow-xl border-typo font-bold dark:border-white-heat text-white-heat dark:text-black-sheep"
+                className="skill-badge will-change-transform bg-slate-500 dark:bg-slate-300 px-3 py-1 rounded-full text-sm border-2 shadow-xl border-typo font-bold dark:border-white-heat text-white-heat dark:text-black-sheep"
               >
                 {skill}
               </span>
