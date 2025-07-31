@@ -1,5 +1,3 @@
-import React from "react";
-import TheNav from "./TheNav";
 import ThemeToggler from "./ThemeToggler";
 import { FaEnvelope, FaGithub, FaLinkedin } from "react-icons/fa";
 import { gsap } from "gsap";
@@ -84,9 +82,7 @@ const Hero = () => {
   }, []);
 
   return (
-    <section className="bg-white-heat dark:bg-black-sheep text-typo dark:text-white-heat transition-colors duration-500">
-      <TheNav />
-
+    <section className="mx-4 min-h-[90vh] bg-white-heat dark:bg-black-sheep text-typo dark:text-white-heat transition-colors duration-500">
       <div className="max-w-7xl mx-auto px-4 py-20">
         <div className="grid md:grid-cols-2 gap-12 items-center">
           <div className="order-1 md:order-2 flex justify-center items-center">
@@ -114,7 +110,7 @@ const Hero = () => {
               Frontend Developer
             </h2>
 
-            <p className="hero-desc text-base md:text-lg max-w-md">
+            <p className="hero-desc text-base md:text-lg max-w-md font-medium">
               Passionate about building beautiful, accessible web interfaces
               with React and Tailwind CSS.
             </p>

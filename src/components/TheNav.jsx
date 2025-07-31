@@ -2,6 +2,7 @@ import React, { useState, useRef, useEffect } from "react";
 
 const TheNav = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const [isScrolled, setIsScrolled] = useState(false);
   const contentRef = useRef(null);
   const [menuHeight, setMenuHeight] = useState("0px");
 
@@ -12,13 +13,27 @@ const TheNav = () => {
   const toggleMenu = () => setIsOpen(!isOpen);
 
   useEffect(() => {
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 10);
+    };
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
+  useEffect(() => {
     if (contentRef.current) {
       setMenuHeight(isOpen ? `${contentRef.current.scrollHeight}px` : "0px");
     }
   }, [isOpen]);
 
   return (
-    <nav className="bg-white-heat text-typo dark:bg-black-sheep dark:text-white-heat sticky top-0 z-50 border-b-2 border-neutral-950 dark:border-white-heat transition-colors duration-500 shadow-md">
+    <nav
+      className={`${
+        isScrolled
+          ? "bg-white-heat/80 dark:bg-black-sheep/80 backdrop-blur-md shadow-lg"
+          : "bg-white-heat dark:bg-black-sheep"
+      } min-h-[10vh] text-typo dark:text-white-heat sticky top-0 z-50 border-b-2 border-neutral-950 dark:border-white-heat transition-all duration-500`}
+    >
       <div className="max-w-7xl mx-auto px-4 py-4 flex justify-between items-center">
         <div className="text-2xl font-extrabold tracking-tight">K.V.M.S. LOKESH</div>
 
@@ -61,7 +76,6 @@ const TheNav = () => {
               )}
             </svg>
           </button>
-
           <div className="absolute inset-0 z-0 bg-neutral-950 dark:bg-white-heat"></div>
         </div>
       </div>
@@ -75,7 +89,6 @@ const TheNav = () => {
       >
         {menuItems.map((item, index) => {
           const delay = `${index * staggerDelay}ms`;
-
           return (
             <a
               key={item}
