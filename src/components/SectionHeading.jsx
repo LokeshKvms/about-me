@@ -1,6 +1,6 @@
 import React from "react";
 
-const SectionHeading = ({ level = "h2", children }) => {
+const SectionHeading = ({ level = "h2", className = "", children }) => {
   const Tag = level;
 
   const levelStyles = {
@@ -19,12 +19,12 @@ const SectionHeading = ({ level = "h2", children }) => {
   return (
     <div className="flex items-center gap-4 w-full mb-6">
       <Tag
-        className={`${textClasses} leading-none whitespace-nowrap tracking-tight text-typo dark:text-white-heat`}
+        className={`about-heading ${textClasses} leading-none whitespace-nowrap tracking-tight text-typo dark:text-white-heat ${className}`}
       >
         {children}
       </Tag>
       <div
-        className={`relative ${lineOffset} flex-grow bg-typo dark:bg-white-heat`}
+        className={`about-line relative ${lineOffset} flex-grow bg-typo dark:bg-white-heat`}
       />
     </div>
   );
