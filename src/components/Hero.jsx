@@ -83,7 +83,7 @@ const Hero = () => {
 
   return (
     <section className="mx-4 min-h-[90vh] bg-white-heat dark:bg-black-sheep text-typo dark:text-white-heat transition-colors duration-500">
-      <div className="max-w-7xl mx-auto px-4 py-20">
+      <div className="max-w-7xl mx-auto px-4 pt-20 md:pt-25">
         <div className="grid md:grid-cols-2 gap-12 items-center">
           <div className="order-1 md:order-2 flex justify-center items-center">
             <div className="relative w-48 md:w-82 aspect-square profile-pic">
@@ -145,12 +145,12 @@ const Hero = () => {
             </div>
 
             <div className="relative group w-fit resume-btn">
-              <div className="absolute inset-0 z-0 bg-neutral-950 dark:bg-white-heat transition-transform duration-300 ease-in-out" />
+              <div className="absolute inset-0 z-0 bg-neutral-950 dark:bg-white-heat/90 transition-transform duration-300 ease-in-out" />
               <a
                 href="/resume.pdf"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="relative z-10 inline-block px-6 py-3 font-semibold border-2 border-neutral-950 dark:border-white-heat bg-white-heat dark:bg-black-sheep text-typo dark:text-white-heat transition-transform duration-300 ease-in-out -translate-x-0.5 -translate-y-0.5 hover:-translate-x-2 hover:-translate-y-2 active:translate-x-0 active:translate-y-0"
+                className="relative z-10 inline-block px-6 py-3 font-semibold border-2 border-neutral-950 dark:border-white-heat/90 bg-white-heat dark:bg-black-sheep text-typo dark:text-white-heat transition-transform duration-300 ease-in-out -translate-x-0.5 -translate-y-0.5 hover:-translate-x-2 hover:-translate-y-2 active:translate-x-0 active:translate-y-0"
               >
                 Resume
               </a>

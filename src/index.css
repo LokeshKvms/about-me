@@ -69,4 +69,16 @@ html {
   scroll-padding-top: 40vh !important;
 }
 
+.ripple {
+  position: absolute;
+  border-radius: 9999px;
+  background-color: rgba(0, 0, 0, 0.2);
+  pointer-events: none;
+  transform: scale(0);
+  will-change: transform, opacity;
+}
+
+.dark .ripple {
+  background-color: rgba(255, 255, 255, 0.25);
+}
 

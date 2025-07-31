@@ -37,7 +37,7 @@ const ThemeToggler = () => {
 
   return (
     <div className="relative w-12 h-12 m-4" onClick={toggleTheme}>
-      <div className="bg-white-heat dark:bg-black-sheep text-typo dark:border-white-heat dark:text-white-heat group relative z-10 w-full h-full rounded-full border-2 border-neutral-950 transition-transform -translate-x-0.5 -translate-y-0.5 hover:-translate-x-2 hover:-translate-y-2 active:translate-x-0 active:translate-y-0 flex items-center justify-center cursor-pointer">
+      <div className="bg-white-heat dark:bg-black-sheep text-typo dark:border-white-heat/90 dark:text-white-heat/90 group relative z-10 w-full h-full rounded-full border-2 border-neutral-950 transition-transform -translate-x-0.5 -translate-y-0.5 hover:-translate-x-2 hover:-translate-y-2 active:translate-x-0 active:translate-y-0 flex items-center justify-center cursor-pointer">
         {isDark ? (
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -72,7 +72,7 @@ const ThemeToggler = () => {
         )}
       </div>
 
-      <div className="absolute inset-0 z-0 bg-neutral-950 dark:bg-white-heat rounded-full"></div>
+      <div className="absolute inset-0 z-0 bg-neutral-950 dark:bg-white-heat/90 rounded-full"></div>
     </div>
   );
 };

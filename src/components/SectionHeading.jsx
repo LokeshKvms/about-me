@@ -10,7 +10,7 @@ const SectionHeading = ({ level = "h2", className = "", children }) => {
 
   const lineOffsets = {
     h2: "top-[4px] h-[2px]",
-    h3: "top-[1px] h-[1px]",
+    h3: "top-[1px] h-[1.5px]",
   };
 
   const textClasses = levelStyles[level] || "text-2xl font-bold";

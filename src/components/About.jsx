@@ -114,7 +114,7 @@ const AboutSection = () => {
   return (
     <section
       ref={container}
-      className="mx-4 px-6 py-12 flex flex-col md:flex-row md:gap-8"
+      className="mx-4 px-6 py-10 flex flex-col md:flex-row md:gap-8"
     >
       <div className="w-full md:w-[70%] space-y-6">
         <SectionHeading level="h2" className="about-heading">

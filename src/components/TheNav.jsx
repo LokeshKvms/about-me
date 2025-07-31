@@ -1,4 +1,5 @@
 import React, { useState, useRef, useEffect } from "react";
+import gsap from "gsap";
 
 const TheNav = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -9,6 +10,8 @@ const TheNav = () => {
   const menuItems = ["Hero", "About", "Projects", "Contact"];
   const animationDuration = 700;
   const staggerDelay = 100;
+
+  const nameRef = useRef(null);
 
   const toggleMenu = () => setIsOpen(!isOpen);
 
@@ -26,6 +29,38 @@ const TheNav = () => {
     }
   }, [isOpen]);
 
+  const handleRipple = (e) => {
+    const parent = nameRef.current;
+    const letters = parent.querySelectorAll("span.letter");
+
+    const rect = parent.getBoundingClientRect();
+    const clickX = e.clientX - rect.left;
+
+    letters.forEach((letter) => {
+      const letterRect = letter.getBoundingClientRect();
+      const letterX = letterRect.left + letterRect.width / 2 - rect.left;
+      const distance = Math.abs(letterX - clickX);
+
+      const delay = distance * 0.009;
+
+      gsap.fromTo(
+        letter,
+        { y: 0, scale: 1 },
+        {
+          y: -10,
+          scale: 1.3,
+          duration: 0.3,
+          delay,
+          ease: "power2.out",
+          yoyo: true,
+          repeat: 1,
+        }
+      );
+    });
+  };
+
+  const name = "K.V.M.S. LOKESH";
+
   return (
     <nav
       className={`${
@@ -35,7 +70,20 @@ const TheNav = () => {
       } min-h-[10vh] text-typo dark:text-white-heat sticky top-0 z-50 border-b-2 border-neutral-950 dark:border-white-heat transition-all duration-500`}
     >
       <div className="max-w-7xl mx-auto px-4 py-4 flex justify-between items-center">
-        <div className="text-2xl font-extrabold tracking-tight">K.V.M.S. LOKESH</div>
+        <div
+          ref={nameRef}
+          onClick={handleRipple}
+          className="relative text-2xl font-extrabold tracking-wide cursor-pointer select-none flex"
+        >
+          {name.split("").map((char, index) => (
+            <span
+              key={index}
+              className="letter inline-block will-change-transform isolation-auto"
+            >
+              {char === " " ? "\u00A0" : char}
+            </span>
+          ))}
+        </div>
 
         <div className="hidden md:flex space-x-6 font-medium">
           {menuItems.map((item) => (
