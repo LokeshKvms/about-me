@@ -68,7 +68,7 @@ const AboutSection = () => {
           y: 40,
           scale: isMobile ? 1 : 0.95,
           duration: 0.7,
-          ease: "back.out(2)", // more dramatic bounce
+          ease: "back.out(2)",
           stagger: {
             amount: isMobile ? 0.25 : 0.6,
             from: "start",
@@ -125,8 +125,8 @@ const AboutSection = () => {
         </SectionHeading>
 
         {[
-          `I’m a recent Computer Science graduate from VVIT (June 2025) and currently wrapping up a six-month web development internship at Vivenns Global Pvt. Ltd., Hyderabad.`,
-          `During this internship, I’ve worked on real-world projects where I implemented security features like CAPTCHA and middleware access control, contributed to UI enhancements, and built responsive landing pages in React.`,
+          `I’m a recent Computer Science graduate from VVIT (June 2025) and currently wrapping up a six-month Web Development Internship at Vivenns Global Pvt. Ltd., Hyderabad.`,
+          `During this internship, I’ve worked on real-world projects where I implemented security features like CAPTCHA and middleware access control in Laravel, contributed to UI enhancements, and built responsive landing pages in React.`,
           `Beyond work, I explore modern web technologies and animation libraries to push the boundaries of user experience.`,
           `Now, as my internship concludes, I’m looking for full-time roles where I can contribute meaningfully and grow alongside a passionate team.`,
         ].map((para, i) => (
@@ -151,7 +151,7 @@ const AboutSection = () => {
             {workSkills.map((skill) => (
               <span
                 key={skill}
-                className="skill-badge will-change-transform bg-slate-500 dark:bg-slate-300 px-3 py-1 rounded-full text-sm border-2 shadow-xl border-typo font-bold dark:border-white-heat text-white-heat dark:text-black-sheep"
+                className="skill-badge will-change-transform bg-slate-500 dark:bg-slate-300 px-3 py-1 rounded-full text-sm border-2 shadow-xl border-typo font-bold text-white-heat dark:text-black-sheep"
               >
                 {skill}
               </span>
@@ -170,7 +170,7 @@ const AboutSection = () => {
             {funSkills.map((skill) => (
               <span
                 key={skill}
-                className="skill-badge will-change-transform bg-slate-500 dark:bg-slate-300 px-3 py-1 rounded-full text-sm border-2 shadow-xl border-typo font-bold dark:border-white-heat text-white-heat dark:text-black-sheep"
+                className="skill-badge will-change-transform bg-slate-500 dark:bg-slate-300 px-3 py-1 rounded-full text-sm border-2 shadow-xl border-typo font-bold text-white-heat dark:text-black-sheep"
               >
                 {skill}
               </span>

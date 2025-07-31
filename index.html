@@ -1,16 +1,41 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="https://placehold.co/50/fffaf0/191c24?text=KL&font=lora" />
+    <link
+      rel="icon"
+      type="image/svg+xml"
+      href="https://placehold.co/50/fffaf0/191c24?text=KL&font=lora"
+    />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="author" content="Venkata Mani Sai Lokesh Kollapudi | kvmslokesh" />
+    <meta
+      name="author"
+      content="Venkata Mani Sai Lokesh Kollapudi | kvmslokesh"
+    />
     <meta property="og:type" content="website" />
-    <meta name="description" content="A passionate front-end developer focused on clean, performant, and responsive web apps." />
+    <meta
+      name="description"
+      content="A passionate front-end developer focused on clean, performant, and responsive web apps."
+    />
     <title>KVMSLOKESH</title>
   </head>
   <body>
     <div id="root"></div>
     <script type="module" src="/src/main.jsx"></script>
+    <script>
+      (function () {
+        const savedTheme = localStorage.getItem("theme");
+        const prefersDark = window.matchMedia(
+          "(prefers-color-scheme: dark)"
+        ).matches;
+        const shouldUseDark =
+          savedTheme === "dark" || (!savedTheme && prefersDark);
+        if (shouldUseDark) {
+          document.documentElement.classList.add("dark");
+        } else {
+          document.documentElement.classList.remove("dark");
+        }
+      })();
+    </script>
   </body>
 </html>

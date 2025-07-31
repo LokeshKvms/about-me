@@ -6,7 +6,7 @@ const TheNav = () => {
   const contentRef = useRef(null);
   const [menuHeight, setMenuHeight] = useState("0px");
 
-  const menuItems = ["Home", "About", "Projects", "Skills", "Contact"];
+  const menuItems = ["Hero", "About", "Projects", "Contact"];
   const animationDuration = 700;
   const staggerDelay = 100;
 
@@ -30,7 +30,7 @@ const TheNav = () => {
     <nav
       className={`${
         isScrolled
-          ? "bg-white-heat/80 dark:bg-black-sheep/80 backdrop-blur-md shadow-lg"
+          ? "bg-white-heat/70 dark:bg-black-sheep/70 backdrop-blur-md shadow-lg"
           : "bg-white-heat dark:bg-black-sheep"
       } min-h-[10vh] text-typo dark:text-white-heat sticky top-0 z-50 border-b-2 border-neutral-950 dark:border-white-heat transition-all duration-500`}
     >
@@ -41,7 +41,7 @@ const TheNav = () => {
           {menuItems.map((item) => (
             <a
               key={item}
-              href="#"
+              href={`#${item}`}
               className="relative group transition-transform duration-300 hover:scale-[1.1]"
             >
               <span className="group-hover:underline">{item}</span>
@@ -92,7 +92,8 @@ const TheNav = () => {
           return (
             <a
               key={item}
-              href="#"
+              href={`#${item}`}
+              onClick={() => setIsOpen(false)}
               style={{
                 transition: `opacity ${animationDuration}ms ease, transform ${animationDuration}ms ease`,
                 transitionDelay: isOpen ? delay : "0ms",
