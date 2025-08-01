@@ -20,7 +20,7 @@ const AboutSection = () => {
         },
       });
 
-      tl.from(".about-heading", {
+      tl.from(".heading", {
         opacity: 0,
         y: 30,
         scale: 0.9,
@@ -30,7 +30,7 @@ const AboutSection = () => {
       });
 
       tl.from(
-        ".about-line",
+        ".line",
         {
           scaleX: 0,
           opacity: 0,
@@ -99,16 +99,18 @@ const AboutSection = () => {
     "Vite",
     "Git",
     "Github",
+    "Statamic",
   ];
   const funSkills = [
     "GSAP",
-    "Express.js",
-    "Figma",
     "Node.js",
+    "Express.js",
+    "MongoDB",
+    "Figma",
     "Power BI",
     "Java",
     "Python",
-    "MongoDB",
+    "Excel",
   ];
 
   return (
@@ -117,7 +119,7 @@ const AboutSection = () => {
       className="mx-4 px-6 py-10 flex flex-col md:flex-row md:gap-8"
     >
       <div className="w-full md:w-[70%] space-y-6">
-        <SectionHeading level="h2" className="about-heading">
+        <SectionHeading level="h2" className="heading">
           About
           <span className="ml-[3px] text-slate-500 dark:text-slate-300 font-extrabold">
             .
@@ -141,7 +143,7 @@ const AboutSection = () => {
 
       <div className="w-full md:w-[30%] mt-10 md:mt-0 flex flex-col gap-8 justify-between">
         <div className="skill-section">
-          <SectionHeading level="h3" className="about-heading">
+          <SectionHeading level="h3" className="heading">
             At work
             <span className="ml-[3px] text-slate-500 dark:text-slate-300 text-xl font-extrabold">
               .
@@ -160,7 +162,7 @@ const AboutSection = () => {
         </div>
 
         <div className="skill-section">
-          <SectionHeading level="h3" className="about-heading">
+          <SectionHeading level="h3" className="heading">
             For fun
             <span className="ml-[3px] text-slate-500 dark:text-slate-300 text-xl font-extrabold">
               .

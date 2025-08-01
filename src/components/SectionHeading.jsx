@@ -19,12 +19,12 @@ const SectionHeading = ({ level = "h2", className = "", children }) => {
   return (
     <div className="flex items-center gap-4 w-full mb-6">
       <Tag
-        className={`about-heading ${textClasses} leading-none whitespace-nowrap tracking-tight text-typo dark:text-white-heat ${className}`}
+        className={`heading ${textClasses} leading-none whitespace-nowrap tracking-tight text-typo dark:text-white-heat ${className}`}
       >
         {children}
       </Tag>
       <div
-        className={`about-line relative ${lineOffset} flex-grow bg-typo dark:bg-white-heat`}
+        className={`line relative ${lineOffset} flex-grow bg-typo dark:bg-white-heat`}
       />
     </div>
   );
