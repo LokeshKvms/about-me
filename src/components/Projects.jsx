@@ -12,14 +12,7 @@ const projects = [
     title: "VVIT Connect – Alumni Social Portal",
     description:
       "A full-stack social platform for alumni interaction with real-time notifications, media sharing, and user profiles.",
-    tech: [
-      "React",
-      "Node.js",
-      "MongoDB",
-      "Tailwind",
-      "Clerk Auth",
-      "Cloudinary",
-    ],
+    tech: ["React", "Node.js", "MongoDB", "Tailwind", "Clerk Auth", "Cloudinary"],
     github: "https://github.com/kvmslokesh/vvit-connect",
     live: "https://vvitcon.onrender.com",
   },
@@ -61,11 +54,13 @@ const ProjectsSection = () => {
   const sectionRef = useRef();
 
   useGSAP(() => {
+    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+
     const ctx = gsap.context(() => {
       const tl = gsap.timeline({
         scrollTrigger: {
           trigger: sectionRef.current,
-          start: "top 80%",
+          start: "top 85%",
           once: true,
         },
       });
@@ -92,45 +87,39 @@ const ProjectsSection = () => {
         "-=0.6"
       );
 
-      gsap.utils.toArray(".project-card").forEach((card, i) => {
-        let cardsPerRow = 3; // default for lg
+      // Pre-set
+      gsap.set(".project-card", { opacity: 0, y: 40, scale: 0.95 });
 
-        const width = window.innerWidth;
-        if (width < 640) {
-          cardsPerRow = 1;
-        } else if (width < 1024) {
-          cardsPerRow = 2;
-        }
-
-        const delay = (i % cardsPerRow) * 0.15;
-
-        gsap.from(card, {
-          scrollTrigger: {
-            trigger: card,
-            start: "top 95%",
-            toggleActions: "play none none none",
-          },
-          opacity: 0,
-          y: 40,
-          scale: 0.95,
-          delay,
-          duration: 0.7,
-          ease: "back.out(2.5)",
-        });
+      ScrollTrigger.batch(".project-card", {
+        start: "top 95%",
+        onEnter: (batch) =>
+          gsap.to(batch, {
+            opacity: 1,
+            y: 0,
+            scale: 1,
+            duration: 0.7,
+            ease: "back.out(2.5)",
+            stagger: 0.1,
+            overwrite: true,
+          }),
       });
 
-      gsap.utils.toArray(".project-tech").forEach((badgeGroup) => {
-        gsap.from(badgeGroup.querySelectorAll("span"), {
-          scrollTrigger: {
-            trigger: badgeGroup,
-            start: "top 95%",
-            toggleActions: "play none none none",
-          },
-          opacity: 0,
-          y: 20,
-          scale: 0.95,
-          ease: "back.out(2)",
-          stagger: 0.08,
+      gsap.utils.toArray(".project-tech").forEach((group) => {
+        const spans = group.querySelectorAll("span");
+        gsap.set(spans, { opacity: 0, y: 20, scale: 0.95 });
+
+        ScrollTrigger.batch(spans, {
+          start: "top 95%",
+          onEnter: (batch) =>
+            gsap.to(batch, {
+              opacity: 1,
+              y: 0,
+              scale: 1,
+              stagger: 0.05,
+              duration: 0.6,
+              ease: "back.out(2)",
+              overwrite: true,
+            }),
         });
       });
     }, sectionRef);
@@ -151,7 +140,10 @@ const ProjectsSection = () => {
 
       <div className="grid gap-10 mt-10 sm:grid-cols-2 lg:grid-cols-3">
         {projects.map((project, index) => (
-          <div key={index} className="relative group w-full project-card">
+          <div
+            key={index}
+            className="relative group w-full project-card will-change-transform"
+          >
             <div className="absolute inset-0 z-0 bg-neutral-950 dark:bg-white-heat/90 transition-transform duration-300 ease-in-out" />
 
             <div className="relative z-10 h-full flex flex-col justify-between p-6 border-2 border-neutral-950 dark:border-white-heat/90 bg-white-heat dark:bg-black-sheep text-typo dark:text-white-heat transition-transform duration-300 ease-in-out -translate-x-0.5 -translate-y-0.5 group-hover:-translate-x-2 group-hover:-translate-y-2 active:translate-x-0 active:translate-y-0">
