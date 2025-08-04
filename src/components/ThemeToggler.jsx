@@ -4,7 +4,7 @@ const THEME_KEY = "theme";
 
 const ThemeToggler = () => {
   const [isDark, setIsDark] = useState(() => {
-    localStorage.getItem(THEME_KEY) === "dark";
+    return localStorage.getItem(THEME_KEY) === "dark";
   });
 
   const toggleTheme = () => {

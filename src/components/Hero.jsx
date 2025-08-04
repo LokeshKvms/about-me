@@ -85,7 +85,6 @@ const Hero = () => {
     <section className="mx-4 py-16 md:py-24 bg-white-heat dark:bg-black-sheep text-typo dark:text-white-heat transition-colors duration-500">
       <div className="mx-auto px-4">
         <div className="grid md:grid-cols-2 gap-12 items-center">
-          {/* Right column: Profile */}
           <div className="order-1 md:order-2 flex justify-center items-center">
             <div className="relative w-48 md:w-82 aspect-square profile-pic">
               <div className="absolute -top-2 -right-2 translate-x-1/3 -translate-y-1/3 sm:translate-x-1/2 -sm:-translate-y-1/2 z-10">
@@ -102,18 +101,17 @@ const Hero = () => {
             </div>
           </div>
 
-          {/* Left column: Info */}
           <div className="order-2 md:order-1 flex flex-col items-center md:items-center justify-center text-center md:text-center space-y-6">
             <h1 className="title text-4xl md:text-5xl font-bold tracking-tighter leading-tight">
               Venkata Mani Sai Lokesh Kollapudi
             </h1>
 
             <h2 className="subtitle text-2xl font-semibold text-slate-600 dark:text-slate-300">
-              Frontend Developer
+              Web Developer
             </h2>
 
             <p className="hero-desc text-base md:text-lg max-w-md font-medium">
-              Passionate about building beautiful, accessible web interfaces with React and Tailwind CSS.
+              Passionate about building beautiful, accessible web interfaces with React, Laravel and Tailwind CSS.
             </p>
 
             <div className="flex justify-center md:justify-start space-x-6 text-3xl">

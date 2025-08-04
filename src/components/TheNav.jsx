@@ -65,7 +65,7 @@ const TheNav = () => {
     <nav
       className={`${
         isScrolled
-          ? "bg-white-heat/70 dark:bg-black-sheep/70 backdrop-blur-md shadow-lg"
+          ? "bg-white-heat/20 dark:bg-black-sheep/30 backdrop-blur-md shadow-lg"
           : "bg-white-heat dark:bg-black-sheep"
       } min-h-[8vh] text-typo dark:text-white-heat sticky top-0 z-50 border-b-2 border-neutral-950 dark:border-white-heat transition-all duration-500`}
     >

@@ -13,7 +13,7 @@ const projects = [
     description:
       "A full-stack social platform for alumni interaction with real-time notifications, media sharing, and user profiles.",
     tech: ["React", "Node.js", "MongoDB", "Tailwind", "Clerk Auth", "Cloudinary"],
-    github: "https://github.com/kvmslokesh/vvit-connect",
+    github: "https://github.com/kvmslokesh/vvitcon",
     live: "https://vvitcon.onrender.com",
   },
   {
@@ -21,7 +21,7 @@ const projects = [
     description:
       "A minimal, glassmorphic chat app with login, media messaging, and block/unblock functionality using Firebase.",
     tech: ["React", "Tailwind", "Firebase"],
-    github: "https://github.com/kvmslokesh/lsbuzzz",
+    github: "https://github.com/kvmslokesh/l-sbuzzz",
     live: "#",
   },
   {
@@ -29,7 +29,7 @@ const projects = [
     description:
       "A machine learning system to detect DDoS attacks from network traffic using TensorFlow and Scikit-learn.",
     tech: ["Python", "TensorFlow", "Keras", "Scikit-learn"],
-    github: "https://github.com/kvmslokesh/ddos-detection",
+    github: "https://github.com/kvmslokesh/ddos_attk",
     live: "#",
   },
   {
@@ -37,7 +37,7 @@ const projects = [
     description:
       "Laravel-based finance manager with calendar view, detailed history, and secure real-time summaries.",
     tech: ["Laravel", "MySQL", "Blade", "Bootstrap"],
-    github: "https://github.com/kvmslokesh/traxp",
+    github: "https://github.com/LokeshKvms/traxp-rep",
     live: "#",
   },
   {
@@ -45,7 +45,7 @@ const projects = [
     description:
       "Organize and search saved links with tags, groups, and filters in a personal dashboard.",
     tech: ["Laravel", "Bootstrap", "jQuery"],
-    github: "https://github.com/kvmslokesh/qref",
+    github: "https://github.com/LokeshKvms/qref",
     live: "#",
   },
 ];
