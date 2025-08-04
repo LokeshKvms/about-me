@@ -6,7 +6,7 @@ import Projects from "./components/Projects";
 function App() {
   return (
     <>
-      <div className="bg-white-heat dark:bg-black-sheep text-black-sheep dark:text-white-heat selection:bg-black-sheep selection:text-white-heat dark:selection:bg-white-heat dark:selection:text-black-sheep transition-colors duration-500">
+      <div className="w-full bg-white-heat dark:bg-black-sheep text-black-sheep dark:text-white-heat selection:bg-black-sheep selection:text-white-heat dark:selection:bg-white-heat dark:selection:text-black-sheep transition-colors duration-500">
         <TheNav />
         <section id="Hero"></section>
         <Hero />

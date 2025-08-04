@@ -67,9 +67,9 @@ const TheNav = () => {
         isScrolled
           ? "bg-white-heat/70 dark:bg-black-sheep/70 backdrop-blur-md shadow-lg"
           : "bg-white-heat dark:bg-black-sheep"
-      } min-h-[10vh] text-typo dark:text-white-heat sticky top-0 z-50 border-b-2 border-neutral-950 dark:border-white-heat transition-all duration-500`}
+      } min-h-[8vh] text-typo dark:text-white-heat sticky top-0 z-50 border-b-2 border-neutral-950 dark:border-white-heat transition-all duration-500`}
     >
-      <div className="max-w-7xl mx-auto px-4 py-4 flex justify-between items-center">
+      <div className="mx-auto p-4 flex items-center justify-between min-h-[8vh]">
         <div
           ref={nameRef}
           onClick={handleRipple}
