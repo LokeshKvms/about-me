@@ -9,10 +9,25 @@ gsap.registerPlugin(ScrollTrigger);
 
 const projects = [
   {
+    title: "LDrive - The Professional's Cloud",
+    description:
+      "A modern storage management and file sharing platform that lets users effortlessly upload, organize, and share files.",
+    tech: ["React.js", "Next.js", "Appwrite", "Tailwind CSS"],
+    github: "https://github.com/kvmslokesh/ldrive",
+    live: "https://l-drive.netlify.app",
+  },
+  {
     title: "VVIT Connect – Alumni Social Portal",
     description:
       "A full-stack social platform for alumni interaction with real-time notifications, media sharing, and user profiles.",
-    tech: ["React", "Node.js", "MongoDB", "Tailwind", "Clerk Auth", "Cloudinary"],
+    tech: [
+      "React",
+      "Node.js",
+      "MongoDB",
+      "Tailwind CSS",
+      "Clerk Auth",
+      "Cloudinary",
+    ],
     github: "https://github.com/kvmslokesh/vvitcon",
     live: "https://vvitcon.onrender.com",
   },
@@ -109,7 +124,7 @@ const ProjectsSection = () => {
         gsap.set(spans, { opacity: 0, y: 20, scale: 0.95 });
 
         ScrollTrigger.batch(spans, {
-          start: "top 95%",
+          start: "top 97%",
           onEnter: (batch) =>
             gsap.to(batch, {
               opacity: 1,

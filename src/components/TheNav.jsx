@@ -7,7 +7,7 @@ const TheNav = () => {
   const contentRef = useRef(null);
   const [menuHeight, setMenuHeight] = useState("0px");
 
-  const menuItems = ["Hero", "About", "Projects", "Contact"];
+  const menuItems = ["Hero", "About", "Projects"];
   const animationDuration = 700;
   const staggerDelay = 100;
 
@@ -148,9 +148,10 @@ const TheNav = () => {
                 opacity: isOpen ? 1 : 0,
                 transform: isOpen ? "translateX(0)" : "translateX(-20px)",
               }}
-              className="block py-2 font-medium text-lg hover:text-slate-600 dark:hover:text-slate-400"
+              className="block py-2 font-medium text-lg group hover:text-slate-600 dark:hover:text-slate-400"
             >
-              {item}
+              {item}  <span className="absolute inset-0 z-[-1] transition-transform transform scale-x-0 group-hover:scale-x-20 origin-left border-b-2 border-typo dark:border-white-heat"></span>
+            
             </a>
           );
         })}
