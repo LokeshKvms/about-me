@@ -37,7 +37,7 @@ const projects = [
       "A minimal, glassmorphic chat app with login, media messaging, and block/unblock functionality using Firebase.",
     tech: ["React", "Tailwind", "Firebase"],
     github: "https://github.com/kvmslokesh/l-sbuzzz",
-    live: "#",
+    live: "https://l-sbuzz.onrender.com",
   },
   {
     title: "CNN-Powered DDoS Detection",
@@ -159,7 +159,7 @@ const ProjectsSection = () => {
             key={index}
             className="relative group w-full project-card will-change-transform"
           >
-            <div className="absolute inset-0 z-0 bg-neutral-950 dark:bg-white-heat/90 transition-transform duration-300 ease-in-out" />
+            <div className="absolute inset-0 z-0 bg-neutral-950 dark:bg-white-heat/90 transition-transform duration-300 ease-in-out pointer-events-none" />
 
             <div className="relative z-10 h-full flex flex-col justify-between p-6 border-2 border-neutral-950 dark:border-white-heat/90 bg-white-heat dark:bg-black-sheep text-typo dark:text-white-heat transition-transform duration-300 ease-in-out -translate-x-0.5 -translate-y-0.5 group-hover:-translate-x-2 group-hover:-translate-y-2 active:translate-x-0 active:translate-y-0">
               <h3 className="text-xl font-semibold mb-2 group-hover:underline underline-offset-4 decoration-typo dark:decoration-white-heat">
@@ -181,13 +181,14 @@ const ProjectsSection = () => {
                 ))}
               </div>
 
-              <div className="flex items-center gap-4 text-lg text-typo dark:text-white-heat mt-auto">
+              <div className="flex items-center text-lg text-typo dark:text-white-heat mt-auto">
                 {project.github && (
                   <a
                     href={project.github}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="hover:text-slate-600 dark:hover:text-slate-300 transition-colors"
+                    aria-label={`View ${project.title} on GitHub`}
+                    className="p-2 rounded-full hover:scale-145 transition-transform duration-300 ease-in-out"
                   >
                     <FaGithub />
                   </a>
@@ -197,7 +198,8 @@ const ProjectsSection = () => {
                     href={project.live}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="hover:text-slate-600 dark:hover:text-slate-300 transition-colors"
+                    aria-label={`Visit live site for ${project.title}`}
+                    className="p-2 rounded-full hover:scale-145 transition-transform duration-300 ease-in-out"
                   >
                     <FaExternalLinkAlt />
                   </a>
